@@ -41,5 +41,63 @@ const newNames = names.filter(function (name) {
 });
 console.log(names); //the initial is untouched
 console.log(newNames); //NICE ONE
-//.
+
+//SOMETHING MORE ADVANCE
+let people = [
+  { name: 'Kamsy', age: 24 },
+  { name: 'Tomide', age: 38 },
+  { name: 'Deji', age: 46 },
+  { name: 'Mogena', age: 23 },
+  { name: 'Leye', age: 30 },
+  { name: 'Keji', age: 20 },
+];
+
+//Let us filter out every person who is old
+const youngAge = 25;
+let adults = people.filter(function (person) {
+  return person.age > youngAge;
+});
+console.log(adults); //this returns the original array but filters according to our condition.
+//THE FILTER METHOD IS NOT INTENDED FOR LOGGING OR PERFORMING ACTIONS DIRECTLY ON THE ELEMENTS OF THE ARRAY. hmmmm I can see that now
+
+// in order to console.log the results of the filter, I would use the for each method.
+//Adults is the new array with filtered elements.
+adults.forEach(function (person) {
+  console.log(`${person.name} is ${person.age}`);
+});
+
+//If we wanted to create an array for just the filtered adults, we could use this
+let adultNames = adults.map(function (person) {
+  return person.name;
+});
+console.log(adultNames);
+
+//ANOTHER ADVANCE EXAMPLE
+let team = [
+  { name: 'Kamsy', position: 'developer' },
+  { name: 'Tomide', position: 'developer' },
+  { name: 'Fiyin', position: 'designer' },
+  { name: 'Mogena', position: 'developer' },
+  { name: 'Charles', position: 'Co-founder' },
+  { name: 'Godwin', position: 'designer' },
+];
+
+// let us filter out the developers
+let developers = team.filter(function (member) {
+  return member.position == 'developer';
+});
+console.log(developers);
+
+//lets create a separate array for the developers
+let frontDev = developers.map(function (dev) {
+  return dev.name;
+});
+console.log(frontDev);
+
+//Let's console log a string to let us know them
+developers.forEach(function (team) {
+  console.log(`${team.name} is a ${team.position}`); //NNIIIICCCEEEE
+});
+
+//GLORIOUS
 //
